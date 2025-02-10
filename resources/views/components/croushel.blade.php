@@ -1,4 +1,4 @@
-<div id="default-carousel" class="relative w-full max-w-[96rem] mx-auto justify-center mt-5 group" data-carousel="slide">
+<div id="default-carousel" class="relative w-full max-w-[96rem] mx-auto justify-center mt-5 group md:max-w-[69rem]" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         <!-- Item 1 -->

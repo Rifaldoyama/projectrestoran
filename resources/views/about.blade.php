@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container mx-auto px-4 py-10">
-        <div class="bg-white shadow-lg rounded-lg p-8">
+    <div class="flex justify-center items-center min-h-screen px-4 py-10">
+        <div class="bg-white shadow-lg rounded-lg p-8 md:max-w-[79rem] w-full">
             <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Tentang Kami</h1>
 
             <p class="text-gray-600 text-lg text-center">Selamat datang di <span class="font-semibold">Dapur Nusa</span>, tempat di mana cita rasa tradisional bertemu dengan inovasi modern.</p>
@@ -9,11 +9,9 @@
             <div class="mt-8">
                 <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Sejarah Singkat</h2>
                 <div class="grid md:grid-cols-2 gap-8 md:flex md:flex-row-reverse">
-                   
                     <div>
                         <img src="{{ asset('storage/resto/restoold.jpeg') }}" alt="Sejarah Dapur Nusa" class="rounded-lg shadow-lg w-full">
                     </div>
-            
                     <div>
                         <p class="text-gray-600 leading-relaxed">
                             Dapur Nusa didirikan pada tahun 1995 oleh keluarga pecinta kuliner yang ingin melestarikan cita rasa nusantara. Berawal dari sebuah kedai kecil, restoran ini berkembang menjadi tempat makan favorit dengan berbagai hidangan khas yang dikombinasikan dengan teknik memasak modern.
@@ -24,7 +22,6 @@
                     </div>
                 </div>
             </div>
-            
 
             <!-- Cita Rasa -->
             <div class="mt-8 grid md:grid-cols-2 gap-8">

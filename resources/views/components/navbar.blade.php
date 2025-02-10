@@ -1,6 +1,6 @@
-<div class="min-h-full">
+<div class="min-h-full ">
     <nav class="bg-gray-800 fixed top-0 left-0 w-full z-50" x-data="{ isOpen: false }">
-      <div class="mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8 md:max-w-[78rem]">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="shrink-0">

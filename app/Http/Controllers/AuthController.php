@@ -38,7 +38,7 @@ class AuthController extends Controller
                 'admin' => 'admin.dashboard',
                 'customer' => 'customer.dashboard',
                 'kasir' => 'kasir.dashboard',
-                default => 'home',
+                default => 'index',
             });
         }
 
