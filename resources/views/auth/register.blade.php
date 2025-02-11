@@ -5,58 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
 </head>
 
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-center text-gray-700">Register</h2>
-
-        <!-- Peringatan error -->
-        @if ($errors->any())
-            <div class="mb-4 p-3 text-sm text-red-700 bg-red-100 border border-red-400 rounded-lg">
-                <ul class="list-disc pl-5">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+<body class="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
+    <div class="relative">
+        <div class="hidden sm:block h-56 w-56 text-indigo-300 absolute a-z-10 -left-20 -top-20">
+            <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.6) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='none'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='currentColor'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(#a)'/></svg>
+        </div>
+        <div class="hidden sm:block h-28 w-28 text-indigo-300 absolute a-z-10 -right-20 -bottom-20">
+            <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='b' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(0.5) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='none'/><path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5'  stroke-width='1' stroke='none' fill='currentColor'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(#b)'/></svg>
+        </div>
+        <!-- Register -->
+        <div class="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg px-4">
+            <div class="flex-auto p-6">
+                <div class="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
+                    <a href="#" class="flex cursor-pointer items-center gap-2 text-indigo-500 no-underline hover:text-indigo-500">
+                        <span class="flex-shrink-0 text-3xl font-black lowercase tracking-tight opacity-100">DapurNusa.</span>
+                    </a>
+                </div>
+                <h4 class="mb-2 font-medium text-gray-700 xl:text-xl">Join DapurNusa!</h4>
+                <p class="mb-6 text-gray-500">Create your account to get started</p>
+                @if ($errors->any())
+                    <div class="mb-4 p-3 text-sm text-red-700 bg-red-100 border border-red-400 rounded-lg">
+                        <ul class="list-disc pl-5">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form id="" class="mb-4" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="name" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" placeholder="Enter your name" required />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" placeholder="Enter your email" required />
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Password</label>
+                        <input type="password" id="password" name="password" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" placeholder="Enter your password" required />
+                    </div>
+                    <div class="mb-4">
+                        <label for="password_confirmation" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Confirm Password</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" placeholder="Confirm your password" required />
+                    </div>
+                    <div class="mb-4">
+                        <label for="foto" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Profile Photo</label>
+                        <input type="file" id="foto" name="foto" class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg-white py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow" accept="image/*" required />
+                    </div>
+                    <div class="mb-4">
+                        <button class="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-indigo-500 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none" type="submit">Register</button>
+                    </div>
+                </form>
+                <p class="mb-4 text-center">
+                    Already have an account?
+                    <a href="{{ route('login') }}" class="cursor-pointer text-indigo-500 no-underline hover:text-indigo-500"> Sign in here </a>
+                </p>
             </div>
-        @endif
-        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" class="mt-4">
-            @csrf
-            <div class="mb-4">
-                <input type="text" name="name" placeholder="Nama" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <div class="mb-4">
-                <input type="email" name="email" placeholder="Email" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <div class="mb-4">
-                <input type="password" name="password" placeholder="Password" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <div class="mb-4">
-                <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <div class="mb-4">
-                <label for="foto" class="block text-gray-600">Foto Profil</label>
-                <input type="file" name="foto" id="foto" accept="image/*"
-                    class="w-full px-3 py-2 mt-1 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-
-            <button type="submit"
-                class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:shadow-md hover:scale-105">
-                Register
-            </button>
-            
-        </form>
-        <a href="{{ route('login') }}" class="text-blue-600 hover:underline">sudah punya akun?</a>
+        </div>
+        <!-- /Register -->
     </div>
 </body>
 
