@@ -42,3 +42,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/about', function ( $title = 'About' ) {
     return view('about', compact('title'));
 });
+Route::get('/contact', function ( $title = 'Contact' ) {
+    return view('contact', compact('title'));
+});
+Route::get('/menu', function ( $title = 'Menu' ) {
+    return view('menu', compact('title'));
+});

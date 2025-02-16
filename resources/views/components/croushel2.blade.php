@@ -9,9 +9,9 @@
 
         <!-- Item 1 -->
         <div class="w-full h-full flex-shrink-0 relative">
-            <img src="{{ asset('storage/resto/resto.jpg') }}" class="w-full h-full object-cover" alt="Slide 1">
+            <img src="{{ asset('storage/resto/makanan1.jpg') }}" class="w-full h-full object-cover" alt="Slide 1">
             <div class="absolute inset-0 flex items-center justify-center bg-black/60">
-                <h2 class="text-2xl md:text-3xl font-bold text-white text-center p-4">Selamat Datang di Website Kami</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white text-center p-4">Menu Rekomendasi</h2>
             </div>
         </div>
         
